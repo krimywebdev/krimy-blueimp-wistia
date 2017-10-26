@@ -38,6 +38,7 @@ function MyVideoUploaderController() {
         $("#wistia-video-preview").show();
         $("#wistia-video-preview iframe").attr("src",
           "//fast.wistia.net/embed/iframe/" + iframeSrcId +"?videoFoam=true");
+        $('.progress-bar').css('width', '0%');
       },
 
       fail: function(e, data) {
@@ -47,6 +48,7 @@ function MyVideoUploaderController() {
         $(".failure-message").show();
         $(".spinner").hide();
         $('.fileinput-button').css("pointer-events", "auto");
+        $('.progress-bar').css('width', '0%');
       },
 
       progress: function (e, data) {
