@@ -6,14 +6,18 @@
   "author": "Pete Bacon Darwin",
   "license": "MIT",
   "scripts": {
-    "start": "lite-server",
+    "start": "npm run lite",
     "test": "karma start",
     "lint": "jshint app/**/*.js",
     "preci": "npm run lint",
     "ci": "karma start --single-run --browsers Firefox --reporters dots",
     "update-webdriver": "webdriver-manager update",
     "pree2e": "npm run update-webdriver",
-    "e2e": "protractor e2e-tests/protractor.conf.js"
+    "e2e": "protractor e2e-tests/protractor.conf.js",
+    "lite": "lite-server"
+  },
+  "dependencies": {
+    "lite-server": "^2.3.0"
   },
   "devDependencies": {
     "jasmine-core": "^2.4.1",
@@ -22,7 +26,6 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
-    "lite-server": "^2.3.0",
     "protractor": "^3.2.2"
   }
 }
