@@ -12,14 +12,13 @@
     "preci": "npm run lint",
     "ci": "karma start --single-run --browsers Firefox --reporters dots",
     "update-webdriver": "webdriver-manager update",
-    "pree2e": "npm run update-webdriver",
-    "e2e": "protractor e2e-tests/protractor.conf.js",
     "lite": "lite-server"
   },
   "dependencies": {
     "lite-server": "^2.3.0"
   },
   "devDependencies": {
+    "jasmine": "^2.8.0",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.9.1",
     "karma": "^0.13.22",

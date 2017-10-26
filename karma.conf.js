@@ -16,8 +16,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       { pattern: 'lib/angular.js', watched: false },
+      { pattern: 'lib/jquery-3.2.1.js', watched: false },
+      { pattern: 'lib/jquery.ui.widget.js', watched: false },
+      { pattern: 'lib/jquery.iframe.transport.js', watched: false },
+      { pattern: 'lib/jquery.fileupload.js', watched: false },
       { pattern: 'lib/*.js', watched: false },
-      'app/**/*.js'
+      'app/app.js',
+      'app/*.js'
     ],
 
 
