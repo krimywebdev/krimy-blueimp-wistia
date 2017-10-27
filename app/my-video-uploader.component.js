@@ -42,7 +42,7 @@ MyVideoUploaderController.prototype = {
     var progress = parseInt(data.loaded / data.total * 100, 10);
     $('.progress-bar').css('width', progress + '%');
     $('.progress-bar').text(progress + '%');
-    $('#file-name-div').text('Uploading ' + fileName + '...');
+    $('#file-name-div').text('Uploading ' + fileName + '...').show();
     if(progress == 100) {
       $(".spinner").show();
     }
@@ -80,8 +80,10 @@ MyVideoUploaderController.prototype = {
 
       add: function (e, data) {
         $(".failure-message").hide();
-        $(".progress-message").hide();
+        $("#file-name-div").hide();
+        $(".success-message").hide();
         $(".spinner").show();
+        $("#wistia-video-preview").hide();
         if(that.validateFileExtension(data.files[0].name)) {
           if(data.originalFiles.length === 1) {
             data.submit();
@@ -90,6 +92,7 @@ MyVideoUploaderController.prototype = {
             $(".failure-message").html(
               'Please select one file at a time.');
             $(".failure-message").show();
+            $(".spinner").hide();
             return false;
           }
         } else {
@@ -98,6 +101,7 @@ MyVideoUploaderController.prototype = {
             'Please select a file with one of these extensions: ' +
               'avi, wmv, flv, mpg, mp4');
           $(".failure-message").show();
+          $(".spinner").hide();
           return false;
         }
       },
