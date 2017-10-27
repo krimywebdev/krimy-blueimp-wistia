@@ -28,6 +28,34 @@ describe("my-video-uploader component", function() {
 
   });
 
+  it("should not allow non-video file extensions", function() {
+    var $ctrl = getComponentController();
+
+    var fakeName = "pic.png";
+
+    var isValidFileName = $ctrl.validateFileExtension(fakeName);
+
+    expect(isValidFileName).toBeTruthy();
+
+  });
+
+  it("should not allow all video file extensions", function() {
+    var $ctrl = getComponentController();
+
+    var fakeNames = [
+      "abc.mp4",
+      "abc.avi",
+      "abc.wmv",
+      "abc.flv",
+      "abc.mpg"
+    ];
+
+    var allowsValidFileNames = fakeNames.every($ctrl.validateFileExtension);
+
+    expect(allowsValidFileNames).toBeTruthy();
+
+  });
+
   function getComponentController() {
     var $ctrl;
     module('myVideoUploader.component');

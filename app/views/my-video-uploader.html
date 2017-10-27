@@ -1,4 +1,4 @@
-<form id="fileupload" action="https://upload.wistia.com" method="POST" enctype="multipart/form-data" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}" class="ng-pristine ng-valid ng-scope">
+<form id="fileupload-form" action="https://upload.wistia.com" method="POST" enctype="multipart/form-data" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}" class="ng-pristine ng-valid ng-scope">
   <input type='hidden' name='api_password' value='302583c93776e5234612f8eba0b042fe4b83520992aed79e1c3e8287d71547cc' />
   <span class="btn btn-success fileinput-button">
     <i class="glyphicon glyphicon-plus"></i>
@@ -9,7 +9,10 @@
   <br>
   <br>
   <div id="progress" class="progress">
-    <div class="progress-bar"></div>
+    <div class="progress-bar progress-status"></div>
+  </div>
+  <div id="file-name-div" class="progress-status">
+
   </div>
   <br>
   <div class="alert alert-success success-message">
@@ -18,12 +21,15 @@
     <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>
   </div>
   <div class="alert alert-danger failure-message">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   </div>
 </form>
 
 <div class="" id="wistia-video-preview">
   You can preview your video here:
-  <div class="wistia_responsive_padding" style="padding:56.25% 0 28px 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
+  <div class="wistia_responsive_padding" style="padding:56.25% 0 28px 0;position:relative;">
+    <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+      <iframe allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed"
+              allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen
+              width="100%" height="100%"></iframe></div></div>
 
 </div>
